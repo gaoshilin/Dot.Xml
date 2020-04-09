@@ -2,7 +2,7 @@
 
 1. Install-Package Dot.Xml
 
-2.```C#
+2. ```C#
    services.AddXmlSerializer(x =>
             {
                 x.XmlWriterSettings.Encoding = Encoding.UTF8;
@@ -14,7 +14,7 @@
             });
    ```
 
-3.```C#
+3. ```C#
   [XmlRootEx(UseCDATA = false, FullEnding = false, RemoveXmlDeclaration = false, RemoveNamespace = false, DateTimeFormat = "yyyy-MM-ddTHH:mm:ss.fffffffzzzzzz")]
-    public class Member {}
+  public class Member {}
   ```

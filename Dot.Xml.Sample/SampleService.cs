@@ -2,6 +2,7 @@
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Serialization;
 using Dot.Xml.Sample.Models;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +12,15 @@ namespace Dot.Xml.Sample
 {
     public class SampleService : IHostedService
     {
+        private readonly XmlSerializeOptions _options;
+        private readonly DotXmlSerializer _serializer;
+
+        public SampleService(XmlSerializeOptions options, DotXmlSerializer serializer)
+        {
+            _options = options;
+            _serializer = serializer;
+        }
+
         public Task StartAsync(CancellationToken cancellationToken)
         {
             SerializeByXmlSerializeOptionsSample();
@@ -33,10 +43,10 @@ namespace Dot.Xml.Sample
                 Weight = 176.6M
             };
 
-            var playerXml = XmlConverter.Serialize(player);
+            var playerXml = _serializer.Serialize(player);
             Console.WriteLine(playerXml);
 
-            var playerCopy = XmlConverter.Deserialize<Player>(playerXml);
+            var playerCopy = _serializer.Deserialize<Player>(playerXml);
             Console.WriteLine(playerCopy);
         }
 

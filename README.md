@@ -14,7 +14,7 @@
                 x.DateTimeFormat = "yyyy-MM-dd HH:mm:ss";
             });
    ```
-   输出样例：
+   基于上述全局配置的输出样例：
    ```XML
    <Player>
        <Id>1</Id>

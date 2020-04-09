@@ -18,7 +18,13 @@
             _attr = attr;
         }
 
-        public override void WriteEndElement() => base.WriteFullEndElement();
+        public override void WriteEndElement()
+        {
+            if (FullEnding)
+                base.WriteFullEndElement();
+            else
+                base.WriteEndElement();
+        }
 
         public override void WriteString(string text)
         {

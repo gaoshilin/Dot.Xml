@@ -11,26 +11,17 @@ namespace System.Xml.Serialization
 
         public object Deserialize(Type type, string xml)
         {
-            using var reader = new StringReader(xml);
-            var serializer = new XmlSerializer(type);
-            return serializer.Deserialize(reader);
-        }
-
-        public T Deserialize<T>(string xml)
-        {
-            //using var reader = new StringReader(xml);
-            //var serializer = new XmlSerializer(typeof(T));
-            //return (T)serializer.Deserialize(reader);
-
-            var attribute = typeof(T).GetCustomAttribute<XmlRootExAttribute>();
+            var attribute = type.GetCustomAttribute<XmlRootExAttribute>();
 
             using var stringReader = new StringReader(xml);
             using var baseReader = XmlReader.Create(stringReader);
             using var reader = new DotXmlReader(baseReader, _options, attribute);
 
-            var serializer = new XmlSerializer(typeof(T));
-            return (T)serializer.Deserialize(reader);
+            var serializer = new XmlSerializer(type);
+            return serializer.Deserialize(reader);
         }
+
+        public T Deserialize<T>(string xml) => (T)Deserialize(typeof(T), xml);
 
         public string Serialize(object o)
         {

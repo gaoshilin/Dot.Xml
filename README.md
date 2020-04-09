@@ -15,5 +15,6 @@
    ```
 
 3. ```C#
-  public class Member {}
-  ```
+   [XmlRootEx(FullEnding = false)]
+   public class Member {}
+   ```

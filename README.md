@@ -34,16 +34,16 @@
    ```
    自定义配置取代全局配置后输出样例：
    ```XML
-   <?xml version="1.0" encoding="utf-8"?>
+   <?xml version="1.0" encoding="utf-8"?> <!-- 保留了XML声明 -->
    <Member
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+       xmlns:xsd="http://www.w3.org/2001/XMLSchema"> <!-- 保留了名称空间 -->
        <Id>1</Id>
-       <Name>gaolin</Name>
+       <Name>gaolin</Name> <!--无CDATA-->
        <Weight>176.6</Weight>
        <Club>
-           <Name></Name>
-           <CreateTime>2020-04-09T14:25:56.6281742+08:00</CreateTime>
+           <Name /> <!--关闭FullEnding-->
+           <CreateTime>2020-04-09T14:32:30.1053125+08:00</CreateTime>
        </Club>
    </Member>
    ```

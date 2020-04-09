@@ -32,3 +32,18 @@
    [XmlRootEx(FullEnding = false, UseCDATA = false, RemoveNamespace = false, RemoveXmlDeclaration = false, DateTimeFormat = "yyyy-MM-ddTHH:mm:ss.fffffffzzzzzz")]
    public class Member {}
    ```
+   自定义配置取代全局配置后输出样例：
+   ```XML
+   <?xml version="1.0" encoding="utf-8"?>
+   <Member
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+       <Id>1</Id>
+       <Name>gaolin</Name>
+       <Weight>176.6</Weight>
+       <Club>
+           <Name></Name>
+           <CreateTime>2020-04-09T14:25:56.6281742+08:00</CreateTime>
+       </Club>
+   </Member>
+   ```

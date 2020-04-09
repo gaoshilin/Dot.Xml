@@ -55,10 +55,11 @@
    ```
    
 5. 依赖注入方式调用
+   注入：
    ```C#
-   public SampleService(XmlSerializeOptions options, DotXmlSerializer serializer)
-   {
-       _options = options;
-       _serializer = serializer;
-   }
+   public SampleService(DotXmlSerializer serializer) => _serializer = serializer;
+   ```
+   调用：
+   ```C#
+   _serializer.Serialize(player);
    ```

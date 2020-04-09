@@ -54,8 +54,7 @@
    XmlConverter.Deserialize<Player>(playerXml);
    ```
    
-5. 依赖注入方式调用
-   注入：
+5. 依赖注入方式调用，注入：
    ```C#
    public SampleService(DotXmlSerializer serializer) => _serializer = serializer;
    ```

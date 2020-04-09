@@ -14,6 +14,18 @@
                 x.DateTimeFormat = "yyyy-MM-dd HH:mm:ss";
             });
    ```
+   输出样例：
+   ```XML
+   <Player>
+       <Id>1</Id>
+       <Name><![CDATA[gaolin]]></Name>
+       <Weight>176.6</Weight>
+       <Club>
+           <Name></Name>
+           <CreateTime>2020-04-09 14:23:49</CreateTime>
+       </Club>
+   </Player>
+   ```
 
 3. 自定义配置，优先级高于全局配置
    ```C#

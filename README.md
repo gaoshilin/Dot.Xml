@@ -30,7 +30,7 @@
 3. 自定义配置，优先级高于全局配置
    ```C#
    [XmlRootEx(FullEnding = false, UseCDATA = false, RemoveNamespace = false, RemoveXmlDeclaration = false, DateTimeFormat = "yyyy-MM-ddTHH:mm:ss.fffffffzzzzzz")]
-   public class Member {}
+   public class Member { *** }
    ```
    自定义配置取代全局配置后输出样例：
    ```XML
@@ -46,4 +46,19 @@
            <CreateTime>2020-04-09T14:32:30.1053125+08:00</CreateTime>
        </Club>
    </Member>
+   ```
+
+4. 静态调用
+   ```C#
+   XmlConverter.Serialize(player);
+   XmlConverter.Deserialize<Player>(playerXml);
+   ```
+   
+5. 依赖注入方式调用
+   ```C#
+   public SampleService(XmlSerializeOptions options, DotXmlSerializer serializer)
+   {
+       _options = options;
+       _serializer = serializer;
+   }
    ```

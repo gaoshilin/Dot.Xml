@@ -2,6 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageId>Dot.Xml</PackageId>
+    <Title>Dot.Xml</Title>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>Gaolin</Authors>
+    <Description>更方便的控制 CDATA，FullEnding，XmlDeclaration, XmlNamespace 等</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <Copyright>Copyright 2020 (c) CBest. All right reserved.</Copyright>
+    <PackageTags>Xml XmlSerialize</PackageTags>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

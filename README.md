@@ -15,10 +15,5 @@
    ```
 
 3. ```C#
-  [XmlRootEx(UseCDATA = false, 
-             FullEnding = false, 
-             RemoveXmlDeclaration = false, 
-             RemoveNamespace = false, 
-             DateTimeFormat = "yyyy-MM-ddTHH:mm:ss.fffffffzzzzzz")]
   public class Member {}
   ```
